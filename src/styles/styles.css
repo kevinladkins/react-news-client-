@@ -1,1 +1,10 @@
 @import '../../node_modules/normalize.css/normalize.css';
+
+.header {
+  border-bottom: 1px solid black;
+}
+
+.header h1 {
+  font-size: 3em;
+  font-family: 'times-new-roman';
+}
