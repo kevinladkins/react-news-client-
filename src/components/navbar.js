@@ -16,7 +16,6 @@ const ROUTES = ['sports', 'weather']
 class Navbar extends Component {
 
   render() {
-    console.log(window.location.pathname.split('/'))
     return (
       <nav className="navbar navbar-default" >
         <div className="container">
