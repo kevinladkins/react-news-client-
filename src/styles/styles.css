@@ -15,6 +15,30 @@
   font-family: 'times-new-roman';
 }
 
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
 .row.content {
   height: 450px;
+}
+
+.story-detail {
+  height: 300px;
+}
+
+.detail-well {
+  margin-top: 5%;
+  height: 80%;
+}
+
+.story-list {
+  margin-top: 10%;
+  overflow: scroll;
 }
