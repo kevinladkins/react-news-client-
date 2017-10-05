@@ -1,8 +1,11 @@
-import styles from '../styles/styles.css'
+import styles from './styles/styles.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/app'
 
-var root = document.querySelector('div');
-var p = document.createElement('p')
-p.innerHTML = "Do you see me??";
+document.querySelector('div').innerHTML = "stand by"
 
-
-root.appendChild(p);
+ReactDOM.render(
+  <App />,
+  document.querySelector('.root')
+)
