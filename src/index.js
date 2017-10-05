@@ -1,11 +1,15 @@
 import styles from './styles/styles.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app'
+import { Provider } from 'react-redux';
+import App from './components/app';
+import store from './reducers';
 
 document.querySelector('div').innerHTML = "stand by"
 
 ReactDOM.render(
-  <App />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.querySelector('.root')
 )
