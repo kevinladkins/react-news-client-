@@ -22,8 +22,9 @@ class StoryDetail extends Component {
         <div className="well detail-well">
           <h3>{story.title}</h3>
           <img src={image ? image.url : "src/images/news.jpg"} />
-          <br />
-          <p>{story.abstract}</p>
+          <div className="well abstract-well">
+            <p>{story.abstract}</p>
+          </div>
         </div>
         </a>
       </div>
