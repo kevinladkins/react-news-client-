@@ -1,9 +1,24 @@
 @import '../../node_modules/normalize.css/normalize.css';
 @import url('https://fonts.googleapis.com/css?family=Lora');
 
+/***************  GLOBAL ****************/
+
+
 .root {
   font-family: 'Lora', serif;
 }
+
+.well {
+  background-color: white;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+/***************  HEADER ****************/
 
 .header {
   border-bottom: 1px solid black;
@@ -14,6 +29,8 @@
   font-family: 'times-new-roman';
 }
 
+/***************  NAVBAR ****************/
+
 .navbar {
   background-color: white;
   border: none;
@@ -21,7 +38,54 @@
 }
 
 
-@media screen and (min-width 768px) {
+
+/***************  HOME ****************/
+
+.row.content {
+  height: 450px;
+}
+
+
+/***************  STORY-DETAIL ****************/
+
+.detail-well {
+  margin-top: 5%;
+}
+
+.abstract-well {
+  text-align: left;
+}
+
+.story-detail a:hover {
+  text-decoration: none;
+}
+
+.story-detail a {
+  text-decoration: none;
+  color: black;
+}
+
+
+/***************  STORIES-INDEX ****************/
+
+.list-group-item {
+  cursor: pointer;
+}
+
+.list-group-item:hover, .detail-well:hover {
+  background-color: #eee;
+}
+
+
+/***************  MEDIA ****************/
+
+@media only screen and (min-width: 768px) {
+  .story-list {
+    margin-top: 10%;
+    height: 800px;
+    overflow: scroll;
+  }
+
   .navbar .navbar-nav {
     display: inline-block;
     float: none;
@@ -31,31 +95,4 @@
   .navbar .navbar-collapse {
     text-align: center;
   }
-}
-
-
-.row.content {
-  height: 450px;
-}
-
-/*.story-detail {
-  height: 300px;
-}*/
-
-.detail-well {
-  margin-top: 5%;
-}
-
-.story-list {
-  margin-top: 10%;
-  overflow: scroll;
-}
-
-.well {
-  background-color: white;
-}
-
-img {
-  max-width: 100%;
-  max-height: 100%;
 }
