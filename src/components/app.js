@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { fetchStories } from '../actions';
 import Header from './header';
 import Navbar from './navbar';
 import Home from './home';
 
-export default class App extends Component {
+class App extends Component {
+
+  changeSection(section) {
+    this.props.fetchStories(section)
+  }
+
   render() {
     return (
       <BrowserRouter>
        <div>
           <Header />
-          <Navbar />
+          <Navbar changeSection={this.changeSection.bind(this)}/>
           <Switch>
-            <Route path='/:section' component={Home} />
+            <Route path='/:section' component={Home } />
             <Route path='/' component={Home} />
           </Switch>
         </div>
@@ -20,3 +27,5 @@ export default class App extends Component {
     )
   }
 }
+
+export default connect(null, { fetchStories })(App)
