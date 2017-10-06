@@ -1,4 +1,9 @@
 @import '../../node_modules/normalize.css/normalize.css';
+@import url('https://fonts.googleapis.com/css?family=Lora');
+
+.root {
+  font-family: 'Lora', serif;
+}
 
 .header {
   border-bottom: 1px solid black;
@@ -15,30 +20,42 @@
   font-family: 'times-new-roman';
 }
 
-.navbar .navbar-nav {
-  display: inline-block;
-  float: none;
-  vertical-align: top;
+
+@media screen and (min-width 768px) {
+  .navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+  }
+
+  .navbar .navbar-collapse {
+    text-align: center;
+  }
 }
 
-.navbar .navbar-collapse {
-  text-align: center;
-}
 
 .row.content {
   height: 450px;
 }
 
-.story-detail {
+/*.story-detail {
   height: 300px;
-}
+}*/
 
 .detail-well {
   margin-top: 5%;
-  height: 80%;
 }
 
 .story-list {
   margin-top: 10%;
   overflow: scroll;
+}
+
+.well {
+  background-color: white;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
 }
