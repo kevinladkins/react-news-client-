@@ -5,17 +5,21 @@ import _ from 'lodash';
 
 class StoriesIndex extends Component {
 
+
+
   listStory(story) {
-    return (
-      <li className="list-group-item story-item" key={story.title}>
-        <h5>{story.title}</h5>
-        <img src={story.multimedia[1] ? story.multimedia[1].url : 'src/images/news.jpg'} />
-      </li>
-    )
+    if (story.slug !== this.props.lead) {
+      return (
+        <li className="list-group-item story-item" key={story.title}>
+          <h5>{story.title}</h5>
+          <img src={story.multimedia[1] ? story.multimedia[1].url : 'src/images/news.jpg'} />
+        </li>
+      )
+    }
   }
 
   render() {
-    const { stories } = this.props;
+    const { stories, lead } = this.props;
 
     if (!stories) {
       return <div>Loading...</div>
@@ -33,8 +37,8 @@ class StoriesIndex extends Component {
   }
 }
 
-function mapStateToProps({ stories }) {
-  return { stories }
+function mapStateToProps({ stories, lead }) {
+  return { stories, lead }
 }
 
 export default connect(mapStateToProps)(StoriesIndex);
