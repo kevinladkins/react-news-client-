@@ -1,14 +1,22 @@
 import { defaultState } from './default'
 import slug from 'slug';
-import { mapAndSlug } from '../utils'
-import { FETCH_STORIES } from '../actions'
+import { mapAndSlug, setImageKeys } from '../utils'
+import { FETCH_STORIES, FETCH_UPDATE } from '../actions'
 
 export default function storiesReducer(state = null, action) {
   switch (action.type) {
     case FETCH_STORIES:
-      const { results } = action.payload.data;
-      const keyMapped = mapAndSlug(results, 'title');
-      return keyMapped;
+      return setStories(action);
+    case FETCH_UPDATE:
+      return setStories(action);
   }
   return state;
+}
+
+function setStories(action) {
+  var { results } = action.payload.data;
+  const newData = results.map(story => {
+    return setImageKeys(story)
+  });
+  return mapAndSlug(newData, 'title');
 }
