@@ -5,7 +5,6 @@ class StoryDetail extends Component {
   render() {
 
 
-
     const { stories, lead } = this.props
 
     if(!stories) {
@@ -13,16 +12,16 @@ class StoryDetail extends Component {
     }
 
     const story = stories[lead];
-    var lastIndex = story.multimedia.length -1;
-    const image = story.multimedia[lastIndex];
 
     return (
       <div className="col-sm-8 story-detail">
         <a href={story.url} target="_blank">
         <div className="well detail-well">
           <h3>{story.title}</h3>
-          <img src={image ? image.url : "src/images/news.jpg"} />
+          <img src={story.hero} />
           <div className="well abstract-well">
+            <h5>{story.byline}</h5>
+            <h6>{story.updated_date}</h6>
             <p>{story.abstract}</p>
           </div>
         </div>
