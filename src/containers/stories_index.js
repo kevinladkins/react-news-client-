@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { setLead } from '../actions'
 import _ from 'lodash';
 
 
 class StoriesIndex extends Component {
 
 
-
   listStory(story) {
-    if (story.slug !== this.props.lead) {
       return (
-        <li className="list-group-item story-item" key={story.title}>
+        <li
+          className={story.slug == this.props.lead? "list-group-item story-item selected-story" : "list-group-item story-item"}
+          key={story.title}
+          onClick={() => this.props.setLead(story.slug)}
+        >
           <h5>{story.title}</h5>
-          <img src={story.multimedia[1] ? story.multimedia[1].url : 'src/images/news.jpg'} />
+          <img src={story.thumbnail} />
         </li>
       )
-    }
   }
 
   render() {
@@ -41,4 +43,4 @@ function mapStateToProps({ stories, lead }) {
   return { stories, lead }
 }
 
-export default connect(mapStateToProps)(StoriesIndex);
+export default connect(mapStateToProps, { setLead })(StoriesIndex);
