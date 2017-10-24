@@ -8,7 +8,7 @@ class StoryDetail extends Component {
     const { stories, lead } = this.props
 
     if(!stories) {
-      return <div>Loading...</div>
+      return <noscript />
     }
 
     const story = stories[lead];
